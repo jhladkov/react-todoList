@@ -1,0 +1,13 @@
+@import "../../scss/fonts";
+@import '../../scss/animation';
+
+.about-project{
+  animation-name: left-on-right;
+  animation-duration: 1s;
+
+  .about-project-text{
+
+    font-size: 25px;
+  }
+}
+

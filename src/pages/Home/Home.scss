@@ -1,0 +1,35 @@
+.section{
+  padding-top: 100px;
+
+  .manage-task-title{
+    font-size: 45px;
+    margin-bottom: 30px;
+  }
+  .manage-task-block{
+    margin-bottom: 30px;
+    &:last-child{
+      margin-bottom: 0;
+    }
+  }
+
+  .manage-task-add-task{
+    margin-bottom: 30px;
+  }
+  .add-task-form{
+    display: flex;
+  }
+}
+.input{
+  background: none;
+  color: #20232a;
+  padding: 10px;
+  margin-right: 10px;
+  outline: none;
+  border: 1px solid darkgray;
+  border-radius: 2px;
+
+  &:focus{
+    border-color: aqua ;
+    background: honeydew ;
+  }
+}

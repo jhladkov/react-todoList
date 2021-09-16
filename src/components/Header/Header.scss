@@ -1,0 +1,62 @@
+@import "../../scss/colors";
+@import "../../scss/fonts";
+
+
+.header {
+  padding: 20px 0;
+  background-color: $lightDark;
+  position: relative;
+  z-index: 1;
+
+  .header-logo {
+    color: $aqua;
+    user-select: none;
+    font-size: 40px;
+    font-family: $kaush;
+  }
+
+  .header-inner {
+    display: flex;
+    justify-content: space-between;
+
+    .header-menu {
+      display: flex;
+      align-items: center;
+      flex-wrap: wrap;
+    }
+
+    .header-menu-item {
+      margin-right: 15px;
+
+      color: white;
+      font-size: 18px;
+
+      &:last-child {
+        margin-right: 0;
+      }
+
+      a {
+        color: white;
+        transition: all .3s;
+
+        &:hover {
+          color: #61dafb;
+        }
+      }
+
+      .selected {
+        color: $aqua;
+      }
+
+    }
+  }
+
+  #icon-menu {
+    max-width: 30px;
+    width: 100%;
+    display: none;
+    cursor: pointer;
+    user-select: none;
+    fill: white;
+  }
+}

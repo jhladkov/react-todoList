@@ -1,0 +1,54 @@
+@import "../../scss/colors";
+
+
+.button {
+  color: #000;
+  position: relative;
+  overflow: hidden;
+  outline: none;
+  padding: 10px;
+  cursor: pointer;
+  border: none ;
+  z-index: 0;
+  -webkit-transition: color 150ms ease-in-out;
+  transition: color 150ms ease-in-out;
+}
+.button:after {
+  content: '';
+  position: absolute;
+  display: block;
+  top: 0;
+  left: 50%;
+  -webkit-transform: translateX(-50%);
+  transform: translateX(-50%);
+  width: 0;
+  height: 100%;
+  background: #61dafb;
+  z-index: -1;
+  -webkit-transition: width 150ms ease-in-out;
+  transition: width 150ms ease-in-out;
+}
+.button:hover {
+  color: #fff;
+}
+.button:hover:after {
+  width: 110%;
+}
+
+.manage-task-block-done-task{
+  margin-right: 15px;
+}
+
+button:disabled{
+  background: gray;
+  color: white;
+  &:hover{
+    background: gray;
+    color: white;
+  }
+  &:after{
+    content: '';
+    background: gray;
+    color: white;
+  }
+}

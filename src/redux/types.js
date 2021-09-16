@@ -1,0 +1,8 @@
+export const CREATE_TASK = 'CREATE_TASK'
+export const REMOVE_TASK = 'REMOVE_TASK'
+export const CHANGE_TASK = 'CHANGE_TASK'
+export const CREATE_ERROR = 'CREATE_ERROR'
+export const START = 'START'
+export const LOADED = 'LOADED'
+export const TOKEN = 'TOKEN'
+export const RELOADED = 'RELOADED'

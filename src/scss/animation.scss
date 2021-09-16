@@ -1,0 +1,19 @@
+@keyframes left-on-right {
+  0%{
+    position: relative;
+    left: -2000px;
+  }
+  100%{
+    position: relative;
+    left: 0;
+  }
+}
+
+@keyframes top-on-bottom {
+  0%{
+    opacity: 0;
+  }
+  100%{
+    opacity: 1;
+  }
+}
