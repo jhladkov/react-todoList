@@ -37,7 +37,7 @@ const Home = () => {
 
     useEffect(() => {
         getData()
-    }, [])
+    })
 
 
     const toDoItems = totalValue.items && totalValue.items.filter(items => items.typeTask !== 'done')

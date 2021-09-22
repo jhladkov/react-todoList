@@ -1,5 +1,6 @@
 import './Menu.scss'
 import MenuItem from "../MenuItem/MenuItem";
+import PropTypes from 'prop-types'
 
 const Menu = props => {
 
@@ -38,7 +39,7 @@ const Menu = props => {
                 }
                 {localStorage.getItem('idToken')
                     ? <li className='header-menu-item' onClick={props.exitFromAccount}>
-                        <a style={{
+                        <a href='/' onClick={event => event.preventDefault()} style={{
                             cursor:"pointer"
                         }
                         }>Выйти</a>
@@ -48,6 +49,12 @@ const Menu = props => {
             </nav>
         </div>
     )
+}
+
+Menu.propTypes = {
+    className: PropTypes.string,
+    closeMenu: PropTypes.func,
+    exitFromAccount: PropTypes.func
 }
 
 export default Menu

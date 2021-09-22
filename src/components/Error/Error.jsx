@@ -1,4 +1,5 @@
 import './Error.scss'
+import PropTypes from 'prop-types'
 
 const Error = props => {
     return (
@@ -17,6 +18,17 @@ const Error = props => {
 
         </div>
     )
+}
+
+Error.propTypes = {
+    text: PropTypes.string,
+    title: PropTypes.string,
+    onClick: PropTypes.func
+}
+
+Error.defaultProps = {
+    text: 'Ошибка',
+    title: 'Ошибка',
 }
 
 export default Error
