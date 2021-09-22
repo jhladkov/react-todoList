@@ -4,7 +4,7 @@ import Button from "../../UI/Button/Button";
 const ToDo = props => {
 
     return (
-        <div className={`manage-task-block-inner ${props.className}`}>
+        <div className={`manage-task-block-inner ${props.className ? props.className : '' }`}>
             <p className={props.className}>{props.text}</p>
 
             <div>

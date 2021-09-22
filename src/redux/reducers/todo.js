@@ -1,8 +1,19 @@
-import {CHANGE_TASK, CREATE_ERROR, CREATE_TASK, LOADED, RELOADED, REMOVE_TASK, START, TOKEN} from "../types";
+import {
+    ACTIVE_MENU,
+    CHANGE_TASK,
+    CREATE_ERROR,
+    CREATE_TASK,
+    LOADED,
+    RELOADED,
+    REMOVE_TASK,
+    START,
+    TOKEN
+} from "../types";
 
 const initialState = {
     items: [],
     error: false,
+    menuActiveStatus: false,
     isLoaded: false,
     authorizationToken: null
 }
@@ -64,6 +75,11 @@ const todo = (state = initialState, action) => {
                 items: [],
                 isLoaded: false,
                 error: false
+            }
+        case ACTIVE_MENU:
+            return {
+                ...state,
+                menuActiveStatus: action.payload
             }
         default:
             return state

@@ -5,7 +5,7 @@ import MenuItem from "../MenuItem/MenuItem";
 import Menu from "../Menu/Menu";
 import {useState} from "react";
 import {useDispatch} from "react-redux";
-import {reloadedData} from "../../redux/actions/todo";
+import {activeMenuStatus, reloadedData} from "../../redux/actions/todo";
 import {useHistory} from "react-router-dom";
 
 
@@ -41,17 +41,15 @@ const Header = () => {
     }
 
 
-    const test = () => {
-        console.log('yes')
-    }
-
-
     const exitFromAccount = () => {
         localStorage.removeItem('idToken')
         dispatch(reloadedData())
         history.push('/sign-up')
     }
 
+
+
+    const activeMenuValue = activeMenu
 
     return (
         <header className='header'>
@@ -62,7 +60,8 @@ const Header = () => {
                         {
                             textMenuItems && refMenuItems
                                 ? textMenuItems.map((text, index) => {
-                                    return <MenuItem onClick={test} key={index} text={text} link={refMenuItems[index]}/>
+
+                                    return <MenuItem onClick={() => dispatch(activeMenuStatus(!activeMenuValue))} key={index} text={text} link={refMenuItems[index]}/>
 
                                 }) : <div style={{color: "white"}}>Что-то сломалось :(</div>
                         }
@@ -77,17 +76,23 @@ const Header = () => {
                         }
                     </nav>
                     <nav id='burger' className={activeMenu ? 'header-menu close' : 'header-menu'}>
-                        <div className='menu-burger'  onClick={() => setActiveMenu(!activeMenu)} >
+                        <div className='menu-burger'  onClick={() => {
+                            setActiveMenu(!activeMenu)
+                            dispatch(activeMenuStatus(!activeMenu))
+                        }} >
                             <span/>
                         </div>
                     </nav>
 
 
-                    <Menu className={activeMenu ? 'menu activeMenu' : 'menu'}/>
+                    <Menu activeMenu={activeMenu} className={activeMenu ? 'menu activeMenu' : 'menu'}/>
 
                 </div>
             </div>
-            {activeMenu ? <div onClick={() => setActiveMenu(false)} className="blur"/> : null}
+            {activeMenu ? <div onClick={() => {
+                setActiveMenu(false)
+                dispatch(activeMenuStatus(!activeMenu))
+            }} className="blur"/> : null}
         </header>
     )
 }

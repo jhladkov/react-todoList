@@ -9,7 +9,9 @@ import {useSelector} from "react-redux";
 
 
 function App() {
-    let idToken = useSelector(data => data.todo.authorizationToken)
+    let todoData = useSelector(data => data.todo)
+    let idToken = todoData.authorizationToken
+
     if (idToken){
         localStorage.setItem('idToken', JSON.stringify(idToken))
     }
@@ -18,7 +20,7 @@ function App() {
     }
 
     return (
-        <main className='main'>
+        <main className='main' style={todoData.menuActiveStatus ? {overflow:"hidden",height:'100vh'} : null}>
             <Header/>
             <div className="main-wrapper">
                 <Route path='/' exact component={Home}>

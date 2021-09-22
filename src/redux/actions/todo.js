@@ -1,4 +1,15 @@
-import {CHANGE_TASK, CREATE_ERROR, CREATE_TASK, LOADED, RELOADED, REMOVE_TASK, START, TOKEN} from "../types";
+import {
+    ACTIVE,
+    ACTIVE_MENU,
+    CHANGE_TASK,
+    CREATE_ERROR,
+    CREATE_TASK,
+    LOADED,
+    RELOADED,
+    REMOVE_TASK,
+    START,
+    TOKEN
+} from "../types";
 import axios from "axios"
 
 
@@ -67,6 +78,13 @@ export const saveToken = token => {
 export const reloadedData = () => {
     return{
         type:RELOADED
+    }
+}
+
+export const activeMenuStatus = boolean => {
+    return{
+        type:ACTIVE_MENU,
+        payload: boolean
     }
 }
 
