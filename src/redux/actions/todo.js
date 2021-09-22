@@ -1,5 +1,4 @@
 import {
-    ACTIVE,
     ACTIVE_MENU,
     CHANGE_TASK,
     CREATE_ERROR,

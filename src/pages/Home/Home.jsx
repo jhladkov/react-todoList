@@ -18,12 +18,9 @@ import Loader from "../../components/Loader/Loader";
 
 const Home = () => {
 
-
     const dispatch = useDispatch()
 
-
     const url = `https://todo-list-react-13c09-default-rtdb.europe-west1.firebasedatabase.app/${localStorage.getItem('idToken')?.split('').splice(1, 8).join('')}/data.json`
-
 
     let totalValue = useSelector(state => state.todo)
 
@@ -157,7 +154,8 @@ const Home = () => {
                                     />
                                 }) : null
                             }
-                            {totalValue.isLoaded && toDoItems.length === 0 ? <div>Вы пока не добавили задачу</div> : null}
+                            {totalValue.isLoaded && toDoItems.length === 0 ?
+                                <div>Вы пока не добавили задачу</div> : null}
                         </div>
                     </div>
                     <div className="manage-task-block">
@@ -176,7 +174,8 @@ const Home = () => {
                                     />
                                 }) : null
                             }
-                            {totalValue.isLoaded && doneItems.length === 0 ? <div>Вы пока не добавили задачу</div> : null}
+                            {totalValue.isLoaded && doneItems.length === 0 ?
+                                <div>Вы пока не добавили задачу</div> : null}
 
                         </div>
                     </div>
